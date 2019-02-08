@@ -1,0 +1,102 @@
+h1, h2, h3 {
+  font-family: 'Comfortaa', cursive;
+  color: white;
+}
+
+.navbar {
+  background-color: #0D47A1;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#bottom-row {
+  border-bottom: 0.5px solid black;
+  border-right: 0.5px solid black;
+  border-left: 0.5px solid black;
+  height: 100px;
+}
+
+#calendar {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.grid-item {
+  border: 0.5px solid black;
+  padding: 8px;
+  height: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  padding: 10px;
+}
+
+.assignment {
+  background-color: #1ADFDF;
+  font-family: 'Lora', serif;
+  border-radius: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.grid-item.head {
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  font-size: 28px;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+}
+
+.btn.btn-primary {
+  background-color: #0D47A1;
+  font-family: 'Comfortaa', cursive;
+}
+
+.btn.add-class {
+  background-color: #6247AA;
+  color: white;
+  font-size: 18px;
+  height: 50px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.btn.add-assignment {
+  background-color: #0D47A1;
+  color: white;
+  font-size: 18px;
+  height: 50px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.grid-item.head.weekday {
+  background-color: #0D47A1;
+}
+
+.grid-item.head.class {
+  background-color: #6247AA;
+}
+
+.col {
+  padding: 0px;
+}
