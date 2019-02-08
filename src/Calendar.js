@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ColoredGridItem from "./ColoredGridItem"
+import AddClass from './components/AddClass'
 import ClassRow from './ClassRow';
 import Button from './Button'
 
@@ -41,7 +42,7 @@ const Calendar = () => {
             <div className="row" id="bottom-row">
                 <div className="col">
                     <div className="button-container">
-                        <Button class="btn add-class" text="Add Class"></Button>
+                        <AddClass/>
                     </div>
                 </div>
                 <div className="col"></div>
@@ -56,7 +57,7 @@ const Calendar = () => {
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     );
 }
 
