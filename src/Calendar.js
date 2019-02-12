@@ -1,8 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import ColoredGridItem from "./ColoredGridItem"
 import AddClass from './components/AddClass'
-import ClassRow from './ClassRow';
+import AddAssignment from './components/AddAssignment'
+import ClassRow from './ClassRow'
 import Button from './Button'
 
 const Calendar = () => {
@@ -53,7 +54,7 @@ const Calendar = () => {
                 <div className="col"></div>
                 <div className="col">
                     <div className="button-container">
-                        <Button class="btn add-assignment" text="Add Assignment"></Button>
+                        <AddAssignment />
                     </div>
                 </div>
             </div>
