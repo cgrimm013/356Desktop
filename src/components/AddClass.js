@@ -1,13 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createClass } from '../actions';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class AddClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      className: ""
     };
 
+    this.onSubmit = this.onSubmit.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
@@ -17,6 +21,16 @@ class AddClass extends React.Component {
     }));
   }
 
+  onSubmit() {
+    if(this.state.className) {
+      this.props.createClass(this.state.className)
+    } else {
+      alert("You must provide a name before adding a class!")
+      return;
+    }
+    this.toggle()
+  }
+
   render() {
     return (
       <div>
@@ -24,15 +38,14 @@ class AddClass extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Add a New Class</ModalHeader>
           <ModalBody>
-            <Form>
-              <FormGroup>
-                <Label for="className">Class Name</Label>
-                <Input type="text" name="class" id="className" placeholder="Ex. CS 356" />
-              </FormGroup>
-            </Form>
+            <FormGroup>
+              <Label for="className">Class Name</Label>
+              <Input type="text" name="class" id="className" placeholder="Ex. CS 356"
+                onChange={(element) => this.setState({ className: element.target.value})}/>
+            </FormGroup>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Add Class</Button>{' '}
+            <Button type="submit" color="primary" onClick={this.onSubmit}>Add Class</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
@@ -41,4 +54,12 @@ class AddClass extends React.Component {
   }
 }
 
-export default AddClass;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createClass: (name) => {
+      dispatch(createClass(name))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(AddClass);
