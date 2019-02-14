@@ -12,15 +12,13 @@ app.use(function(req, res, next) {
 
 const port = 8181
 
+let id = 0
+
 let assignments = [{
-  id: 0,
+  id: id++,
   type: "Reading",
   class: "CS 428",
-  assignmentDay: {
-    day: 1, //1-31, according to the month
-    month: "February",
-    year: "2019"
-  },
+  assignmentDay: 2,
   dueDate: {
     day: 2,
     month: "February",
@@ -29,32 +27,34 @@ let assignments = [{
   descr: "Read the mythical man month chapters 16-19 by next class."
 },
 {
-  id: 1,
+  id: id++,
   type: "Project",
   class: "CS 356",
-  assignmentDay: {
-    day: 4, //1-31, according to the month
-    month: "February",
-    year: "2019"
-  },
+  assignmentDay: 0,
   dueDate: null, //dueDate is optional
   descr: "Finish writing the backend server by the end of today"
+},
+{
+  id: id++,
+  type: "Lab",
+  class: "CS 404",
+  assignmentDay: 5,
+  dueDate: null, //dueDate is optional
+  descr: "Eat all the pizzas"
 }]
 
 let classes = [{
-  id: 2,
+  id: id++,
   name: "CS 428"
 },
 {
-  id: 3,
+  id: id++,
   name: "CS 404"
 },
 {
-  id: 4,
+  id: id++,
   name: "CS 356"
 }]
-
-let id = 4;
 
 const createAssignment = (req) => {
   id = id + 1; //increment the id

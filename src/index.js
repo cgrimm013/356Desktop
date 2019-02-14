@@ -10,8 +10,14 @@ import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const initialState = {
+  classes: [],
+  assignments: []
+}
+
 const store = createStore(
   reducers,
+  initialState,
   composeEnhancers(applyMiddleware(promise))
 )
 
