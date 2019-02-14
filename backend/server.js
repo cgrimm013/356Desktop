@@ -4,6 +4,12 @@ const app = express()
 app.use(myParser.urlencoded({extended : true}));
 app.use(myParser.json());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 const port = 8181
 
 let assignments = [{
