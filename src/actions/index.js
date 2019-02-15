@@ -28,11 +28,25 @@ export function createClass(name) {
   }
 }
 
+export function createAssignment(day, klass, type, descr) {
+  const promise = axios.post(`${host}/api/assignments`, {
+    class: klass,
+    assignmentDay: day,
+    type,
+    descr
+  });
+  return {
+    type: ActionTypes.CREATE_ASSIGNMENT,
+    payload: promise
+  }
+}
+
 
 let ActionTypes = {
   GET_ASSIGNMENTS: 'GET_ASSIGNMENTS',
   GET_CLASSES: 'GET_CLASSES',
-  CREATE_CLASS: 'CREATE_CLASS'
+  CREATE_CLASS: 'CREATE_CLASS',
+  CREATE_ASSIGNMENT: 'CREATE_ASSIGNMENT'
 }
 
 export default ActionTypes;
