@@ -5,7 +5,6 @@ import ColoredGridItem from "./ColoredGridItem"
 import AddClass from './components/AddClass'
 import AddAssignment from './components/AddAssignment'
 import ClassRow from './ClassRow'
-import Button from './Button'
 
 class Calendar extends React.Component {
     renderRows() {

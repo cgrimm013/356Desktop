@@ -36,6 +36,7 @@ h1, h2, h3 {
   border: 0.5px solid black;
   padding: 8px;
   height: 100px;
+  display: block;
 }
 
 .button-container {
@@ -47,14 +48,33 @@ h1, h2, h3 {
   padding: 10px;
 }
 
+.assignment-space {
+  margin: 5px;
+}
+
 .assignment {
-  background-color: #1ADFDF;
   font-family: 'Lora', serif;
   border-radius: 20px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.assignment.project {
+  background-color: #1ADFDF;
+}
+
+.assignment.reading {
+  background-color: #ff80ab;
+}
+
+.assignment.lab {
+  background-color: #b2ff59;
+}
+
+.assignment.review {
+  background-color: #ffee58;
 }
 
 .grid-item.head {
