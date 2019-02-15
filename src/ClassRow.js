@@ -9,7 +9,7 @@ class ClassRow extends React.Component {
         for(var i = 0; i < 7; i++) {
             days.push(
                 <div key={`${this.props.name}${i}${this.props.id}`} className="col">
-                    <ClassDay day={i} className={this.props.name}></ClassDay>
+                    <ClassDay day={i} class={this.props.name}></ClassDay>
                 </div>
             )
         }
