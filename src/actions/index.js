@@ -41,12 +41,21 @@ export function createAssignment(day, klass, type, descr) {
   }
 }
 
+export function deleteAssignment(id) {
+  const promise = axios.delete(`${host}/api/assignments/${id}`);
+  return {
+    type: ActionTypes.DELETE_ASSIGNMENT,
+    payload: promise
+  }
+}
+
 
 let ActionTypes = {
   GET_ASSIGNMENTS: 'GET_ASSIGNMENTS',
   GET_CLASSES: 'GET_CLASSES',
   CREATE_CLASS: 'CREATE_CLASS',
-  CREATE_ASSIGNMENT: 'CREATE_ASSIGNMENT'
+  CREATE_ASSIGNMENT: 'CREATE_ASSIGNMENT',
+  DELETE_ASSIGNMENT: 'DELETE_ASSIGNMENT'
 }
 
 export default ActionTypes;

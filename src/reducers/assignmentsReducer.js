@@ -6,6 +6,8 @@ export default function(state = [], action){
       return action.payload.data;
     case ActionTypes.CREATE_ASSIGNMENT:
       return action.payload.data;
+    case ActionTypes.DELETE_ASSIGNMENT:
+      return action.payload.data;
     default:
       return state;
   }
