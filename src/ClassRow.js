@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import ColoredGridItem from './ColoredGridItem'
 import ClassDay from './ClassDay'
+import ClassNameDisplay from './components/ClassNameDisplay';
 
 class ClassRow extends React.Component {
+
     renderDays() {
         let days = []
         for(var i = 0; i < 7; i++) {
@@ -15,11 +16,12 @@ class ClassRow extends React.Component {
         }
         return days;
     }
+
     render() {
         return (
             <div className="row">
                 <div className="col">
-                    <ColoredGridItem class="grid-item head class" text={this.props.name}></ColoredGridItem>
+                    <ClassNameDisplay classId={this.props.classId} text={this.props.name}></ClassNameDisplay>
                 </div>
                 {this.renderDays()}
             </div>

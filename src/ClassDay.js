@@ -25,7 +25,7 @@ class ClassDay extends Component {
     this.props.assignments.forEach(assignment => {
       let style = this.getAssignmentClassName(assignment.type);
       assignmentDisplays.push(
-        <div>
+        <div key={`${assignment.type}${assignment.description}${assignment.assignmentDay}`}>
           <span className={style}>{assignment.type}</span>
           <br/>
           <div className="assignment-space" />

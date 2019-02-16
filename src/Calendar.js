@@ -10,7 +10,7 @@ class Calendar extends React.Component {
     renderRows() {
         let rows = []
         for(var i = 0; i < this.props.classes.length; i++) {
-            rows.push(<ClassRow key={this.props.classes[i].id} name={this.props.classes[i].name}></ClassRow>)
+            rows.push(<ClassRow key={this.props.classes[i].id} classId={this.props.classes[i].id} name={this.props.classes[i].name}></ClassRow>)
         }
         return rows;
     }

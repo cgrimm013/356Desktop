@@ -115,8 +115,20 @@ h1, h2, h3 {
 
 .grid-item.head.class {
   background-color: #6247AA;
+  font-size: 20px;
 }
 
 .col {
   padding: 0px;
+}
+
+.delete-class-hidden {
+  visibility: hidden;
+  font-size: 15px;
+}
+
+.delete-class-visible {
+  visibility: visible;
+  font-size: 15px;
+  cursor: pointer;
 }
