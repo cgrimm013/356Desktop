@@ -20,10 +20,41 @@ class ClassDay extends Component {
     }));
   }
 
+  renderAssignments() {
+    let assignmentDisplays = [];
+    this.props.assignments.forEach(assignment => {
+      let style = this.getAssignmentClassName(assignment.type);
+      assignmentDisplays.push(
+        <div key={`${assignment.type}${assignment.description}${assignment.assignmentDay}`}>
+          <span className={style}>{assignment.type}</span>
+          <br/>
+          <div className="assignment-space" />
+        </div>
+        )
+    });
+
+    return assignmentDisplays;
+  }
+
+  getAssignmentClassName(type) {
+    switch (type) {
+      case "Reading":
+        return "assignment reading";
+      case "Project":
+        return "assignment project";
+      case "Lab":
+        return "assignment lab";
+      case "Review":
+        return "assignment review";
+      default:
+        return "assignment";
+    }
+  }
+
   render() {
     return (
         <div className="grid-item" onClick={this.toggle}>
-            <span className="assignment">Project</span>
+            {this.renderAssignments()}
             <ViewAssignments toggle={this.toggle} modal={this.state.modal} day={this.props.day} class={this.props.class}/>
         </div>
     );

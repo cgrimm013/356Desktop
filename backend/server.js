@@ -37,6 +37,14 @@ let assignments = [{
 },
 {
   id: id++,
+  type: "Review",
+  class: "CS 356",
+  assignmentDay: 0,
+  dueDate: null, //dueDate is optional
+  descr: "MIDTERM??"
+},
+{
+  id: id++,
   type: "Lab",
   class: "CS 404",
   assignmentDay: 5,
