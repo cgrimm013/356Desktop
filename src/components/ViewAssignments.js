@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { deleteAssignment } from '../actions';
 import { getDaysAssignments } from '../reducers';
 import { Button, Modal, Row, Col, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import AddAssignment from './AddAssignment';
 import './ViewAssignments.css';
 
 class ViewAssignments extends React.Component {
@@ -46,7 +47,7 @@ class ViewAssignments extends React.Component {
           <Col md={12} className="assignmentType">
             {current.type}
           </Col>
-          <Col md={12}>
+          <Col style={{whiteSpace: 'pre-wrap'}} md={12}>
             {current.descr}
           </Col>
           <Col md={12}>
@@ -67,6 +68,7 @@ class ViewAssignments extends React.Component {
           {this.displayAssignments()}
         </ModalBody>
         <ModalFooter>
+          <AddAssignment buttonType="btn btn-primary" text="Add" defaultDay={this.props.day} defaultClass={this.props.class}/>
           <Button color="secondary" onClick={this.props.toggle}>Close</Button>
         </ModalFooter>
       </Modal>

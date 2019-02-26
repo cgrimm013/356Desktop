@@ -7,10 +7,20 @@ class AddAssignment extends React.Component {
   constructor(props) {
     super(props);
 
+    let defaultClass = '';
+    if (this.props.defaultClass) {
+      defaultClass = this.props.defaultClass;
+    }
+
+    let defaultDay = 0;
+    if (this.props.defaultDay) {
+      defaultDay = this.props.defaultDay;
+    }
+
     this.state = {
       modal: false,
-      day: 0,
-      class: "",
+      day: defaultDay,
+      class: defaultClass,
       type: "Reading",
       descr: ""
     };
@@ -56,6 +66,27 @@ class AddAssignment extends React.Component {
     }
   }
 
+  dayFromNumber(number) {
+    switch(number) {
+      case 0:
+        return 'Monday';
+      case 1:
+        return 'Tuesday';
+      case 2:
+        return 'Wednesday';
+      case 3:
+        return 'Thursday';
+      case 4:
+        return 'Friday';
+      case 5:
+        return 'Saturday';
+      case 6:
+        return 'Sunday';
+      default:
+        return 'INVALID DAY';
+    }
+  } 
+
   onSubmit() {
     let klass = this.state.class
     if(!this.props.classes) {
@@ -87,7 +118,7 @@ class AddAssignment extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} className="add-assignment">Add Assignment</Button>
+        <Button color="primary" onClick={this.toggle} className={this.props.buttonType}>{this.props.text}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Add a New Assignment</ModalHeader>
           <ModalBody>
@@ -101,14 +132,17 @@ class AddAssignment extends React.Component {
                       <option>Reading</option>
                       <option>Project</option>
                       <option>Lab</option>
+                      <option>Writing</option>
+                      <option>Bookwork</option>
                       <option>Review</option>
+                      <option>Other</option>
                     </Input>
                   </FormGroup>
                 </Col>
                 <Col md={6}>
                   <FormGroup>
                     <Label for="classSelect">Class</Label>
-                    <Input type="select" name="class" id="classSelect"
+                    <Input defaultValue={this.state.class} type="select" name="class" id="classSelect"
                       onChange={(element) => this.setState({ class: element.target.value})}>
                       {this.displayClassOptions()}
                     </Input>
@@ -128,7 +162,7 @@ class AddAssignment extends React.Component {
                 <Col md={6}>
                   <FormGroup>
                     <Label for="typeSelect">Assignment Day</Label>
-                    <Input type="select" name="type" id="typeSelect"
+                    <Input defaultValue={this.dayFromNumber(this.state.day)} type="select" name="type" id="typeSelect"
                       onChange={(element) => this.setState({ day: this.numberFromDay(element.target.value)})}>
                       <option>Monday</option>
                       <option>Tuesday</option>

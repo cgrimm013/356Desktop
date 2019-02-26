@@ -39,6 +39,10 @@ h1, h2, h3 {
   display: block;
 }
 
+.grid-item.class-day {
+  cursor: pointer;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -75,6 +79,18 @@ h1, h2, h3 {
 
 .assignment.review {
   background-color: #ffee58;
+}
+
+.assignment.writing {
+  background-color: #e6ceff;
+}
+
+.assignment.bookwork {
+  background-color: #ffc107;
+}
+
+.assignment.other {
+  background-color: #e0e0e0;
 }
 
 .grid-item.head {
