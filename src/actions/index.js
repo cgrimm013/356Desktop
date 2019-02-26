@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const host = 'http://18.191.233.160:8181';
+// const host = 'http://18.191.233.160:8181';
+const host = 'http://localhost:8181'
 
 export function fetchClasses() {
   const promise = axios.get(`${host}/api/classes`);

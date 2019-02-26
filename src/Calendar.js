@@ -59,7 +59,7 @@ class Calendar extends React.Component {
                     <div className="col"></div>
                     <div className="col">
                         <div className="button-container">
-                            <AddAssignment />
+                            <AddAssignment buttonType="btn add-assignment" text="Add Assignment"/>
                         </div>
                     </div>
                 </div>
