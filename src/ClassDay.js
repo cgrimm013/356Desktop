@@ -53,7 +53,7 @@ class ClassDay extends Component {
 
   render() {
     return (
-        <div className="grid-item" onClick={this.toggle}>
+        <div className="grid-item class-day" onClick={this.toggle}>
             {this.renderAssignments()}
             <ViewAssignments toggle={this.toggle} modal={this.state.modal} day={this.props.day} class={this.props.class}/>
         </div>
