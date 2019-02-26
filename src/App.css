@@ -81,6 +81,18 @@ h1, h2, h3 {
   background-color: #ffee58;
 }
 
+.assignment.writing {
+  background-color: #e6ceff;
+}
+
+.assignment.bookwork {
+  background-color: #ffc107;
+}
+
+.assignment.other {
+  background-color: #e0e0e0;
+}
+
 .grid-item.head {
   font-family: 'Comfortaa', cursive;
   color: white;

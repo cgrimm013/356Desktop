@@ -132,7 +132,10 @@ class AddAssignment extends React.Component {
                       <option>Reading</option>
                       <option>Project</option>
                       <option>Lab</option>
+                      <option>Writing</option>
+                      <option>Bookwork</option>
                       <option>Review</option>
+                      <option>Other</option>
                     </Input>
                   </FormGroup>
                 </Col>

@@ -46,6 +46,12 @@ class ClassDay extends Component {
         return "assignment lab";
       case "Review":
         return "assignment review";
+      case "Bookwork":
+        return "assignment bookwork"
+      case "Writing":
+        return "assignment writing"
+      case "Other":
+        return "assignment other"
       default:
         return "assignment";
     }
