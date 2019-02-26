@@ -47,7 +47,7 @@ class ViewAssignments extends React.Component {
           <Col md={12} className="assignmentType">
             {current.type}
           </Col>
-          <Col md={12}>
+          <Col style={{whiteSpace: 'pre-wrap'}} md={12}>
             {current.descr}
           </Col>
           <Col md={12}>
